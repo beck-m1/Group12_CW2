@@ -1,8 +1,16 @@
 header.default {
     background-color: #C3F73A;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     font-size: 35px;
     color: black;
     font-family: 'Trebuchet MS', sans-serif;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+    header.default img {
+    height: 100px;
+    width: auto;
+    margin-right: 20px;
 }
