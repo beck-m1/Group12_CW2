@@ -2,7 +2,7 @@
 body {
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
-    background-color: white; /* White background */
+    background-color: white;
     padding: 0;
     margin: 0;
 }
@@ -15,7 +15,7 @@ header.default {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Stack logo and text */
+    flex-direction: column;
 }
 
 /* Logo Styling */
@@ -23,7 +23,7 @@ header.default img {
     height: 80px;  
     width: auto;   
     max-width: 150px; 
-    margin-bottom: 10px; /* Space between logo and title */
+    margin-bottom: 10px; 
 }
 
 /* Title Styling */
@@ -55,7 +55,7 @@ header.default h1 {
     font-weight: bold;
 }
 
-/* Button Hover Effect */
+/* Button Hover Effect *
 .year-btn:hover {
     background-color: #7C77B9;
     color: white;
