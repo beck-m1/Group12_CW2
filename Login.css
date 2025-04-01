@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+}
+
+header.default {
+    background-color: #C3F73A;
+    padding: 10px;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+    font-family: 'Trebuchet MS', sans-serif;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+header.default img {
+    height: 100px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.box {
+    left: 240px;
+    top: 20px;
+    height: 506px;
+    position: relative;
+    float: left;
+}
+
+#welcome {
+    width: 900px;
+}
+
+#text {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    color: white;
+    top: 180px;
+    font-size: 30px;
+    background-color: rgb(0, 0, 0, 0.8);
+    width: 900px;
+    text-align: center;
+}
+
+#login{
+    width: 500px;
+    background-color: rgb(184, 184, 184);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#headerLogin {
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    background-color: rgb(57, 57, 57);
+    color: white;
+    height: 60px;
+    text-align: center;
+    line-height: 170%;
+}
+
+#usernameControls {
+    position: relative;
+    top: 70px;
+    left: 70px;
+    font-size: 20px;
+}
+
+#passwordControls {
+    position: relative;
+    top: 85px;
+    left: 77px;
+    font-size: 20px;
+}
+
+#lblUsername {
+    font-size: 20px;
+}
+
+#lblPassword {
+    font-size: 20px;
+}
+
+#buttonDiv {
+    position: relative;
+    top: 100px;
+    left: 160px;
+    width: 360px;
+}
+
+.buttons {
+    font-size: 20px;
+    width: 180px;
+    margin: 5px;
+    font-family: 'Trebuchet MS', sans-serif;
+}  
