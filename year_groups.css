@@ -55,7 +55,7 @@ header.default h1 {
     font-weight: bold;
 }
 
-/* Button Hover Effect *
+/* Button Hover Effect */
 .year-btn:hover {
     background-color: #7C77B9;
     color: white;
