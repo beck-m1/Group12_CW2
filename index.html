@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="index.css">
+    
+    <!-- Load jQuery before your script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="index.js"></script>
+    
     <link rel="icon" type="image/png" href="cw2_logo.png">
 </head>
 <body>
@@ -21,11 +25,11 @@
         <!-- Year Group Selection -->
         <div class="year-group-container">
             <h2>Select Your Year Group</h2>
-            <button class="year-btn" onclick="showTopics('Primary 6')">Primary 6</button>
-            <button class="year-btn" onclick="showTopics('Primary 7')">Primary 7</button>
-            <button class="year-btn" onclick="showTopics('Year 8')">Year 8</button>
-            <button class="year-btn" onclick="showTopics('Year 9')">Year 9</button>
-            <button class="year-btn" onclick="showTopics('Year 10')">Year 10</button>
+            <button class="year-btn" data-year="Primary 6">Primary 6</button>
+            <button class="year-btn" data-year="Primary 7">Primary 7</button>
+            <button class="year-btn" data-year="Year 8">Year 8</button>
+            <button class="year-btn" data-year="Year 9">Year 9</button>
+            <button class="year-btn" data-year="Year 10">Year 10</button>
         </div>
 
         <!-- Topics Section -->
