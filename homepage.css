@@ -6,34 +6,68 @@
     padding: 0;
     margin: 0;
 }
-/* Ensure header text is centered and styled */
-header.default h1 {
-    font-size: 40px;
-    margin: 0;
-    font-weight: bold;
-}
-
-header.default h2 {
-    font-size: 28px;
-    margin: 5px 0 0;
-    font-weight: normal;
-}
 
 /* Header Styling */
 header.default {
     background-color: #C3F73A;
     padding: 20px;
     display: flex;
-    align-items: center;
+    align-items: center; /* Align logo and text in a row */
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row; /* Change from column to row */
+    gap: 15px; /* Space between logo and text */
 }
 
 /* Logo Styling */
 header.default img {
     height: 80px;
     max-width: 150px;
-    margin-bottom: 10px;
+    margin-bottom: 0; /* Remove bottom margin for alignment */
+}
+
+/* Ensure title remains formatted correctly */
+header.default h1 {
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+header.default h2 {
+    font-size: 28px;
+    margin: 5px 0 0;
+    padding: 20px;
+    font-weight: normal;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Increased spacing between the buttons */
+    margin-top: 10px;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 0px;
+    transition: color 0.3s ease; /* Only text color will change on hover */
+    border-left: 3px solid white; /* Adds a small white line between buttons */
+}
+
+/* Remove the first button's left border */
+.nav-btn:first-child {
+    border-left: none;
+}
+
+/* Hover Effect */
+.nav-btn:hover {
+    color: white; /* Change text to white when hovered */
 }
 
 /* Main Container */
@@ -58,8 +92,8 @@ header.default img {
 
 /* Year Group Button Styling */
 .year-btn {
-    background-color: #C3F73A;
-    color: black;
+    background-color: #31081F;
+    color: white;
     width: 100%;
     padding: 20px;
     font-size: 22px;
@@ -90,7 +124,7 @@ header.default img {
 
 /* Topic Buttons - Wider */
 .topic-btn {
-    background-color: #31081F;
+    background-color: #7C77B9;
     color: white;
     width: 100%;
     padding: 20px;
@@ -122,8 +156,8 @@ header.default img {
 }
 
 .option-btn {
-    background-color: #7C77B9;
-    color: white;
+    background-color: #C3F73A;
+    color: black;
     width: 60%;
     padding: 20px;
     font-size: 22px;
@@ -162,22 +196,6 @@ body {
     margin: 0;
 }
 
-/* Header Styling */
-header.default {
-    background-color: #C3F73A;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-/* Logo Styling */
-header.default img {
-    height: 80px;
-    max-width: 150px;
-    margin-bottom: 10px;
-}
 
 /* Title Styling */
 header.default h1 {
