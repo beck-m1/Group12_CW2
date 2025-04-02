@@ -44,7 +44,7 @@ header.default img {
     text-align: center;
 }
 
-#login{
+#loginForm{
     width: 500px;
     background-color: rgb(184, 184, 184);
     font-family: 'Trebuchet MS', sans-serif;
@@ -61,38 +61,84 @@ header.default img {
     line-height: 170%;
 }
 
-#usernameControls {
+.loginControls {
     position: relative;
-    top: 70px;
-    left: 70px;
     font-size: 20px;
+}
+
+#usernameControls {
+    top: 70px;
+    left: 81px;
 }
 
 #passwordControls {
-    position: relative;
     top: 85px;
-    left: 77px;
-    font-size: 20px;
+    left: 88px;
 }
 
-#lblUsername {
-    font-size: 20px;
+#confirmPasswordControls {
+    top: 100px;
+    left: 11px;
+    display: none;
 }
 
-#lblPassword {
+#txtUsername {
     font-size: 20px;
+    width: 220px;
+}
+
+#txtPassword {
+    font-size: 20px;
+    width: 220px;
+}
+
+#txtConfirmPassword {
+    font-size: 20px;
+    width: 220px;
 }
 
 #buttonDiv {
     position: relative;
-    top: 100px;
-    left: 160px;
+    top: 110px;
+    left: 120px;
     width: 360px;
 }
 
 .buttons {
-    font-size: 20px;
+    font-size: 22px;
     width: 180px;
     margin: 5px;
     font-family: 'Trebuchet MS', sans-serif;
-}  
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    color: white;
+    padding: 20px;
+    transition: background-color 0.4s ease;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+#reset {
+    background-color: #ba0000;
+}
+
+#reset:hover {
+    background-color: #ea0000;
+}
+
+#login {
+    background-color: #0030b5;
+}
+
+#login:hover {
+    background-color: #0044ff;
+}
+
+#createLogin {
+    background-color: #07d800;
+}
+
+#createLogin:hover {
+    background-color: #08e800;
+}

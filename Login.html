@@ -3,7 +3,8 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="Login.css">
 		<title>NumberNinja - Login</title>
-        </head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
 	<body>
         <div>
             <header class="default">
@@ -21,20 +22,30 @@
             </p>
         </div>
 
-        <form id = "login" class = "box">
+        <form id = "loginForm" class = "box">
             <header id = "headerLogin">Login</header>
-            <div id = "usernameControls">
-                <label for="lblUsername">Username:</label>
-                <input type="text" id="lblUsername" name = "username" placeholder="Username">
+
+            <div id = "usernameControls" class="loginControls">
+                <label for="txtUsername">Username:</label>
+                <input type="text" id="txtUsername" name = "username" placeholder="Username">
             </div>
-            <div id = "passwordControls">
-                <label for="lblPassword" class = >Password:</label>
-                <input type="text" id="lblPassword" name = "password" placeholder="Password">
+
+            <div id = "passwordControls" class="loginControls">
+                <label for="txtPassword">Password:</label>
+                <input type="password" id="txtPassword" name="password" placeholder="Password">
             </div>
+
+            <div id = "confirmPasswordControls" class="loginControls">
+                <label for="txtConfirmPassword">Confirm Password: </label>
+                <input type="password" id="txtConfirmPassword" name="confirmPassword" placeholder="Confirm Password">
+            </div>
+
             <div id = "buttonDiv">
-                <input type="reset" class = "buttons">
-                <input type="submit" class = "buttons">
+                <input type="reset" class="buttons" id="reset">
+                <button type="button" class="buttons" id="login" value="Login">Login</button>
+                <button type="button" class = "buttons" id="createLogin">Sign Up</button>
             </div>
         </form>
+        <script src="Login.js"></script>
     </body>
 </html>
