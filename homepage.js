@@ -41,10 +41,10 @@ $(document).ready(function () {
     const body = document.body;
 
     colourBlindButton.addEventListener('click', () => {
-        body.classList.add('colour-blind');
+        body.classList.add('colour-blind-monochrome');
     });
 
     restoreButton.addEventListener('click', () => {
-        body.classList.remove('colour-blind');
+        body.classList.remove('colour-blind-monochrome');
     });
 });
