@@ -1,10 +1,23 @@
- /* General Page Styling */
- body {
+/* General Page Styling */
+body {
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
     background-color: white;
     padding: 0;
     margin: 0;
+}
+
+.controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.controls button {
+    margin-right: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
 }
 
 /* Header Styling */
@@ -115,11 +128,11 @@ header.default h2 {
     color: white;
 }
 
-
 /* Moves topic buttons to the left beside the year group buttons when a topic is selected */
 .topic-container.move-left {
-    align-items: flex-start;
-    margin-left: 30%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Topic Buttons - Wider */
@@ -187,73 +200,47 @@ header.default h2 {
     font-size: 18px;
     font-weight: bold;
 }
-/* General Page Styling */
-body {
-    font-family: 'Trebuchet MS', sans-serif;
-    text-align: center;
-    background-color: white;
-    padding: 0;
-    margin: 0;
+
+/* Colour Blind Mode Styles */
+body.colour-blind {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333;
 }
 
-
-/* Title Styling */
-header.default h1 {
-    font-size: 40px;
-    margin: 0;
+body.colour-blind header.default {
+    background-color: #ccc; /* Grey header */
+    color: #000;
 }
 
-/* Main Container */
-.container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center; /* Center content initially */
-    padding: 20px;
-    flex-wrap: wrap;
+body.colour-blind .year-btn {
+    background-color: #888; /* Grey buttons */
+    color: #fff;
 }
 
-/* Year Group Container - Centered by Default */
-.year-group-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centered initially */
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto; /* Ensures it's centered */
-    transition: all 0.5s ease;
+body.colour-blind .year-btn:hover {
+    background-color: #aaa;
 }
 
-/* Moves year group container to the left when a topic is selected */
-.year-group-container.move-left {
-    align-items: flex-start;
-    margin-left: 5%;
+body.colour-blind .topic-btn {
+    background-color: #888;
+    color: #fff;
 }
 
-/* Universal Button Styling */
-.button {
-    background-color: #C3F73A;
-    color: black;
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    font-size: 22px;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-
-    /* Center text inside the button */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+body.colour-blind .topic-btn:hover {
+    background-color: #aaa;
 }
 
-/* Hover Effect for All Buttons */
-.button:hover {
-    background-color: #A49E8D;
-    color: white;
+body.colour-blind .option-btn {
+    background-color: #888;
+    color: #fff;
+}
+
+body.colour-blind .option-btn:hover {
+    background-color: #aaa;
+}
+
+body.colour-blind .footer {
+    background-color: #ccc;
 }
 
 /* Topic Container - Initially Centered */
@@ -263,7 +250,7 @@ header.default h1 {
     align-items: center;
     width: 100%;
     max-width: 400px;
-    margin: 20px auto; /* Center it */
+    margin: 20px auto;
     transition: all 0.5s ease;
 }
 
@@ -273,20 +260,4 @@ header.default h1 {
     width: 100%;
     font-size: 26px;
     margin-bottom: 15px;
-}
-
-/* Moves topic buttons to the left beside the year group buttons when a topic is selected */
-.topic-container.move-left {
-    align-items: flex-start;
-    margin-left: 30%;
-}
-
-/* Footer */
-.footer {
-    background-color: #C3F73A;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
 }
