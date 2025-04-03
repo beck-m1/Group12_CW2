@@ -24,7 +24,8 @@ $(document).ready(function() {
             $("#headerLogin").text("Create New Account");
             $("#createLogin").text("Sign In");
             $("#login").text("Create Account");
-        } else {
+        }
+        else {
             $("#confirmPasswordControls").css("display", "none");
             $("#headerLogin").text("Login");
             $("#createLogin").text("Sign Up");
@@ -82,14 +83,15 @@ $(document).ready(function() {
                 $("#txtConfirmPassword").css("color", "red");
                 $("#txtConfirmPassword").prop("type", "text");
             }
-        } else {
+        }
+        else {
             if (!($("#txtUsername").val() in Accounts)) {
                 $("#txtUsername").val("Incorrect Username");
                 $("#txtUsername").css("color", "red");
                 usernameCheck = 1;
                 return;
             }
-            if ($("#txtPassword").val() != Accounts[$("#txtUsername").val()]) {
+            if ($("#txtPassword").val() != Accounts[$("txtUsername").text]) {
                 $("#txtPassword").val("Incorrect Password");
                 $("#txtPassword").css("color", "red");
                 $("#txtPassword").prop("type", "text");
@@ -98,13 +100,17 @@ $(document).ready(function() {
             }
         }
     });
+    
+    // Colour blind mode functionality
+    const colourBlindButton = document.getElementById('colourBlindButton');
+    const restoreButton = document.getElementById('restoreButton');
+    const body = document.body;
 
-    // Colour Blind Mode Functionality
-    $("#colourBlind").click(function() {
-        $("body").addClass("colour-blind");
+    colourBlindButton.addEventListener('click', () => {
+        body.classList.add('colour-blind-monochrome');
     });
 
-    $("#restoreColours").click(function() {
-        $("body").removeClass("colour-blind");
+    restoreButton.addEventListener('click', () => {
+        body.classList.remove('colour-blind-monochrome');
     });
 });
