@@ -24,8 +24,7 @@ $(document).ready(function() {
             $("#headerLogin").text("Create New Account");
             $("#createLogin").text("Sign In");
             $("#login").text("Create Account");
-        }
-        else {
+        } else {
             $("#confirmPasswordControls").css("display", "none");
             $("#headerLogin").text("Login");
             $("#createLogin").text("Sign Up");
@@ -83,15 +82,14 @@ $(document).ready(function() {
                 $("#txtConfirmPassword").css("color", "red");
                 $("#txtConfirmPassword").prop("type", "text");
             }
-        }
-        else {
+        } else {
             if (!($("#txtUsername").val() in Accounts)) {
                 $("#txtUsername").val("Incorrect Username");
                 $("#txtUsername").css("color", "red");
                 usernameCheck = 1;
                 return;
             }
-            if ($("#txtPassword").val() != Accounts[$("txtUsername").text]) {
+            if ($("#txtPassword").val() != Accounts[$("#txtUsername").val()]) {
                 $("#txtPassword").val("Incorrect Password");
                 $("#txtPassword").css("color", "red");
                 $("#txtPassword").prop("type", "text");
@@ -100,4 +98,13 @@ $(document).ready(function() {
             }
         }
     });
-})
+
+    // Colour Blind Mode Functionality
+    $("#colourBlind").click(function() {
+        $("body").addClass("colour-blind");
+    });
+
+    $("#restoreColours").click(function() {
+        $("body").removeClass("colour-blind");
+    });
+});
