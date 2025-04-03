@@ -6,7 +6,6 @@
     <title>Index</title>
     <link rel="stylesheet" href="homepage.css">
     
-    <!-- Load jQuery before your script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="homepage.js"></script>
     
@@ -14,7 +13,6 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <header class="default">
         <img src="Images/cw2_logo.png" alt="Logo">
         <h1>NumberNinja</h1>
@@ -25,9 +23,7 @@
         </nav>
     </header>
 
-    <!-- Main Content Section -->
     <div class="container">
-        <!-- Year Group Selection -->
         <div class="year-group-container">
             <h2>Select Your Year Group</h2>
             <button class="year-btn" data-year="Primary 6">Primary 6</button>
@@ -37,13 +33,11 @@
             <button class="year-btn" data-year="Year 10">Year 10</button>
         </div>
 
-        <!-- Topics Section -->
         <div class="topic-container" id="topic-container" style="display: none;">
             <h2 id="selected-year"></h2>
             <div class="topic-buttons"></div>
         </div>
 
-        <!-- Options Section -->
         <div class="options-container" id="options-container" style="display: none;">
             <h2 id="selected-topic"></h2>
             <button class="option-btn">Practice Questions</button>
@@ -51,8 +45,11 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
     <footer class="footer">
+        <div class="footer-buttons">
+            <button id="colourBlindButton" class="footer-btn">Colour Blind Mode</button>
+            <button id="restoreButton" class="footer-btn">Restore Default</button>
+        </div>
         © 2025 NumberNinja | All Rights Reserved
     </footer>
 
