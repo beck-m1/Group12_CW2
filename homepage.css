@@ -1,5 +1,5 @@
- /* General Page Styling */
- body {
+/* General Page Styling */
+body {
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
     background-color: white;
@@ -13,7 +13,7 @@ header.default {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures space between logo/title, h2, and nav */
+    justify-content: space-between;
     flex-direction: row;
     gap: 15px;
 }
@@ -51,9 +51,9 @@ header.default h2 {
 /* Right-aligned Navigation Bar */
 .navbar {
     display: flex;
-    justify-content: flex-end; /* Pushes navbar to the right */
+    justify-content: flex-end;
     gap: 30px;
-    margin-left: auto; /* Ensures it stays on the right */
+    margin-left: auto;
 }
 
 /* Navigation Buttons */
@@ -64,25 +64,23 @@ header.default h2 {
     font-size: 18px;
     font-weight: bold;
     border-radius: 0px;
-    transition: color 0.3s ease; /* Only text color will change on hover */
-    border-left: 3px solid white; /* Adds a small white line between buttons */
+    transition: color 0.3s ease;
+    border-left: 3px solid white;
 }
 
-/* Remove the first button's left border */
 .nav-btn:first-child {
     border-left: none;
 }
 
-/* Hover Effect */
 .nav-btn:hover {
-    color: white; /* Change text to white when hovered */
+    color: white;
 }
 
 /* Main Container */
 .container {
     display: flex;
     align-items: flex-start;
-    justify-content: center; /* Center content initially */
+    justify-content: center;
     padding: 20px;
     flex-wrap: wrap;
 }
@@ -91,10 +89,10 @@ header.default h2 {
 .year-group-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centered initially */
+    align-items: center;
     width: 100%;
     max-width: 400px;
-    margin: 0 auto; /* Ensures it's centered */
+    margin: 0 auto;
     transition: all 0.5s ease;
 }
 
@@ -110,8 +108,6 @@ header.default h2 {
     border-radius: 10px;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
-
-    /* Center text inside the button */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,16 +117,6 @@ header.default h2 {
 .year-btn:hover {
     background-color: #A49E8D;
     color: white;
-}
-
-
-/* Moves topic buttons to the left beside the year group buttons when a topic is selected */
-.topic-container.move-left {
-   display: flex;
-   align-items: flex-start;
-   justify-content: center; /* Center content initially */
-   padding: 20px;
-   flex-wrap: wrap;
 }
 
 /* Topic Buttons - Wider */
@@ -145,8 +131,6 @@ header.default h2 {
     border-radius: 10px;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
-
-    /* Center text inside the button */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,8 +161,6 @@ header.default h2 {
     border-radius: 10px;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
-
-    /* Center text inside the button */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,100 +180,32 @@ header.default h2 {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
-}
-/* General Page Styling */
-body {
-    font-family: 'Trebuchet MS', sans-serif;
-    text-align: center;
-    background-color: white;
-    padding: 0;
-    margin: 0;
-}
-
-/* Main Container */
-.container {
     display: flex;
-    align-items: flex-start;
-    justify-content: center; /* Center content initially */
-    padding: 20px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Year Group Container - Centered by Default */
-.year-group-container {
+.footer-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centered initially */
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto; /* Ensures it's centered */
-    transition: all 0.5s ease;
+    gap: 10px;
 }
 
-/* Moves year group container to the left when a topic is selected */
-.year-group-container.move-left {
-    align-items: flex-start;
-    margin-left: 5%;
-}
-
-/* Universal Button Styling */
-.button {
-    background-color: #C3F73A;
-    color: black;
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    font-size: 22px;
+.footer-btn {
+    background-color: #31081F;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-
-    /* Center text inside the button */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
-/* Hover Effect for All Buttons */
-.button:hover {
+.footer-btn:hover {
     background-color: #A49E8D;
-    color: white;
 }
 
-/* Topic Container - Initially Centered */
-.topic-container {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto; /* Center it */
-    transition: all 0.5s ease;
-}
-
-/* Ensure the text above topics is centered */
-.topic-container h2 {
-    text-align: center;
-    width: 100%;
-    font-size: 26px;
-    margin-bottom: 15px;
-}
-
-/* Moves topic buttons to the left beside the year group buttons when a topic is selected */
-.topic-container.move-left {
-    align-items: flex-start;
-    margin-left: 30%;
-}
-
-/* Footer */
-.footer {
-    background-color: #C3F73A;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
+/* Colour blind mode */
+.colour-blind-monochrome {
+    filter: grayscale(100%);
 }
