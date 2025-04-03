@@ -34,4 +34,17 @@ $(document).ready(function () {
     $(".year-btn").on("click", function () {
         showTopics($(this).data("year"));
     });
+
+    // Colour blind mode functionality
+    const colourBlindButton = document.getElementById('colourBlindButton');
+    const restoreButton = document.getElementById('restoreButton');
+    const body = document.body;
+
+    colourBlindButton.addEventListener('click', () => {
+        body.classList.add('colour-blind');
+    });
+
+    restoreButton.addEventListener('click', () => {
+        body.classList.remove('colour-blind');
+    });
 });
