@@ -1,8 +1,6 @@
-Accounts = {
-    "JohnSmith": "password123",
-    "NicholasPrice": "pass111",
-    "KateJohnson": "Access321",
-};
+localStorage.setItem("JohnSmith", "password123");
+localStorage.setItem("NicholasPrice", "pass111");
+localStorage.setItem("KateJohnson", "Access321");
 
 let usernameCheck = 0;
 let passwordCheck = 0;
@@ -17,19 +15,30 @@ $(document).ready(function() {
         usernameCheck = 0;
         passwordCheck = 0;
         confirmPasswordCheck = 0;
-
-        $("#buttonDiv").css("top", "110px");
+        
         if ($("#confirmPasswordControls").is(":hidden")) {
-            $("#confirmPasswordControls").css("display", "initial");
             $("#headerLogin").text("Create New Account");
             $("#createLogin").text("Sign In");
             $("#login").text("Create Account");
-        }
-        else {
-            $("#confirmPasswordControls").css("display", "none");
+
+            //Animation to transition to Create Account
+            $("#buttonDiv").animate({
+                top: '+=25px'
+            },function() {
+                $("#confirmPasswordControls").fadeIn();
+            });
+            
+        } else {
             $("#headerLogin").text("Login");
             $("#createLogin").text("Sign Up");
             $("#login").text("Login");
+
+            //Animation to transition to login
+            $("#confirmPasswordControls").fadeOut(function() {
+                $("#buttonDiv").animate({
+                    top: '-=25px'
+                })
+            });
         }
     });
 
@@ -59,58 +68,62 @@ $(document).ready(function() {
         }
     });
 
-    function isEmptyOrSpaces(str) {
-        return str === null || str === undefined || str.trim() === '';
-    }
-
     $("#login").click(function() {
-        if ($("#login").text() == "Create Account") {
-            console.log("test");
-            if (isEmptyOrSpaces($("#txtUsername").val())) {
-                usernameCheck = 1;
-                $("#txtUsername").val("Invalid Username");
-                $("#txtUsername").css("color", "red");
+        const isCreateAccount = $(this).text() == "Create Account";
+        const username = $("#txtUsername");
+        const password = $("#txtPassword");
+        const confirmPassword = $("#txtConfirmPassword");
+        
+        //Reset checks
+        usernameCheck = passwordCheck = confirmPasswordCheck = 0;
+        
+        //Displays error
+        function showError(field, message, showAsText = false) {
+            field.val(message).css("color", "red");
+            if (showAsText) field.prop("type", "text");
+            return 1; //Return check number
+        }
+        
+        //Check if input is empty
+        function isEmptyOrSpaces(str) {
+            return str === null || str === undefined || str.trim() === '';
+        }
+
+        //Check if inputted information is invalid
+        if (isCreateAccount) {
+            if (isEmptyOrSpaces(username.val())) usernameCheck = showError(username, "Invalid Username");
+            if (isEmptyOrSpaces(password.val())) passwordCheck = showError(password, "Invalid Password", true);
+            if (isEmptyOrSpaces(confirmPassword.val())) confirmPasswordCheck = showError(confirmPassword, "Passwords do not match", true);
+        } else {
+            if (localStorage.getItem(username.val()) === null) {
+                usernameCheck = showError(username, "Incorrect Username");
+                return;
             }
-            if (isEmptyOrSpaces($("#txtPassword").val())) {
-                passwordCheck = 1;
-                $("#txtPassword").val("Invalid Password");
-                $("#txtPassword").css("color", "red");
-                $("#txtConfirmPassword").prop("type", "text");
+            if (password.val() != localStorage.getItem(username.val())) {
+                passwordCheck = showError(password, "Incorrect Password", true);
+                return;
             }
-            if (isEmptyOrSpaces($("#txtConfirmPassword").val())) {
-                confirmPasswordCheck = 1;
-                $("#txtConfirmPassword").val("Passwords do not match");
-                $("#txtConfirmPassword").css("color", "red");
-                $("#txtConfirmPassword").prop("type", "text");
+        }
+
+        if (isCreateAccount) {
+            localStorage.setItem(username.val(), password.val());
+            for (var i = 0; i < localStorage.length; i++){
+                console.log(localStorage.key(i));
             }
+            
         }
         else {
-            if (!($("#txtUsername").val() in Accounts)) {
-                $("#txtUsername").val("Incorrect Username");
-                $("#txtUsername").css("color", "red");
-                usernameCheck = 1;
-                return;
-            }
-            if ($("#txtPassword").val() != Accounts[$("txtUsername").text]) {
-                $("#txtPassword").val("Incorrect Password");
-                $("#txtPassword").css("color", "red");
-                $("#txtPassword").prop("type", "text");
-                passwordCheck = 1;
-                return;
-            }
+            //Go to new homepage
+            document.cookie = `username=${username}`;
         }
     });
-    
-    // Colour blind mode functionality
-    const colourBlindButton = document.getElementById('colourBlindButton');
-    const restoreButton = document.getElementById('restoreButton');
-    const body = document.body;
 
-    colourBlindButton.addEventListener('click', () => {
-        body.classList.add('colour-blind-monochrome');
+    // Colour Blind Mode Functionality
+    $("#colourBlind").click(function() {
+        $("body").addClass("colour-blind");
     });
 
-    restoreButton.addEventListener('click', () => {
-        body.classList.remove('colour-blind-monochrome');
+    $("#restoreColours").click(function() {
+        $("body").removeClass("colour-blind");
     });
 });
