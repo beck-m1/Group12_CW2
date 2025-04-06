@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topic Information - NumberNinja</title>
+    <link rel="stylesheet" href="information.css">
+    <link rel="icon" type="image/png" href="cw2_logo(1).png">
+</head>
+<body>
+
+    <header class="default">
+        <img src="cw2_logo(1).png" alt="Logo">
+        <h1>NumberNinja</h1>
+        <h2>Topic Information</h2>
+        <nav class="navbar">
+            <a href="login.html" class="nav-btn">Login</a>
+            <a href="HPage.html" class="nav-btn">Main Menu</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Primary 6 -->
+        <section id="primary6-addition-subtraction">
+            <h2>Addition & Subtraction (Primary 6)</h2>
+            <p>Learn how to add and subtract numbers up to 4 digits, including using number lines and column methods.</p>
+        </section>
+
+        <section id="primary6-basic-fractions">
+            <h2>Basic Fractions (Primary 6)</h2>
+            <p>Understand what fractions are and how to find halves, quarters, and thirds of shapes and numbers.</p>
+        </section>
+
+        <section id="primary6-shapes">
+            <h2>Shapes (Primary 6)</h2>
+            <p>Recognise common 2D shapes like circles, triangles, and rectangles, and explore their properties.</p>
+        </section>
+
+        <!-- Primary 7 -->
+        <section id="primary7-multiplication-division">
+            <h2>Multiplication & Division (Primary 7)</h2>
+            <p>Practice multiplying and dividing numbers up to 3 digits, and understand times tables and fact families.</p>
+        </section>
+
+        <section id="primary7-decimals">
+            <h2>Decimals (Primary 7)</h2>
+            <p>Learn what decimals are, how to compare them, and how to add or subtract them.</p>
+        </section>
+
+        <section id="primary7-measurements">
+            <h2>Measurements (Primary 7)</h2>
+            <p>Measure length, weight, and volume using standard units like cm, kg, and litres.</p>
+        </section>
+
+        <!-- Year 8 -->
+        <section id="year8-percentages">
+            <h2>Percentages (Year 8)</h2>
+            <p>Understand how percentages relate to fractions and decimals, and how to calculate simple percentages.</p>
+        </section>
+
+        <section id="year8-negative-numbers">
+            <h2>Negative Numbers (Year 8)</h2>
+            <p>Learn about numbers below zero and how to use them in temperature, money, and calculations.</p>
+        </section>
+
+        <section id="year8-basic-area-perimeter">
+            <h2>Basic Area & Perimeter (Year 8)</h2>
+            <p>Calculate the area and perimeter of rectangles, squares, and simple compound shapes.</p>
+        </section>
+
+        <!-- Year 9 -->
+        <section id="year9-ratio-proportion">
+            <h2>Ratio & Proportion (Year 9)</h2>
+            <p>Understand how to compare amounts using ratios and solve problems involving proportions.</p>
+        </section>
+
+        <section id="year9-simple-equations">
+            <h2>Simple Equations (Year 9)</h2>
+            <p>Learn how to solve equations like x + 3 = 7 by balancing both sides and using inverse operations.</p>
+        </section>
+
+        <section id="year9-rounding-estimation">
+            <h2>Rounding & Estimation (Year 9)</h2>
+            <p>Practice rounding numbers to the nearest 10, 100, or 1000 and using estimation to check your work.</p>
+        </section>
+
+        <!-- Year 10 -->
+        <section id="year10-speed-distance-time">
+            <h2>Speed, Distance & Time (Year 10)</h2>
+            <p>Use the formula speed = distance ÷ time to solve real-world problems.</p>
+        </section>
+
+        <section id="year10-standard-form">
+            <h2>Standard Form (Year 10)</h2>
+            <p>Learn how to write large and small numbers using powers of ten in standard form.</p>
+        </section>
+
+        <section id="year10-simple-interest-vat">
+            <h2>Simple Interest & VAT (Year 10)</h2>
+            <p>Calculate simple interest and value-added tax (VAT) using percentages and formulas.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-buttons">
+            <button id="colourBlindButton" class="footer-btn">Colour Blind Mode</button>
+            <button id="restoreButton" class="footer-btn">Restore Default</button>
+        </div>
+        © 2025 NumberNinja | All Rights Reserved
+    </footer>
+
+    <script>
+        // Colour blind mode support
+        const colourBlindButton = document.getElementById('colourBlindButton');
+        const restoreButton = document.getElementById('restoreButton');
+        const body = document.body;
+
+        colourBlindButton.addEventListener('click', () => {
+            body.classList.add('colour-blind-monochrome');
+        });
+
+        restoreButton.addEventListener('click', () => {
+            body.classList.remove('colour-blind-monochrome');
+        });
+    </script>
+</body>
+</html>
