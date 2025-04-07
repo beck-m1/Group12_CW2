@@ -30,6 +30,16 @@ $(document).ready(function () {
         $("#options-container").css("display", "flex");
     }
 
+    $("#addSubBtn").on("click", function() {
+        if ($("#answer1").is(":checked")) {
+            $("#dialogBox").dialog();
+            $("#dialogBox p").text("Correct Anwser");
+            return;
+        }
+        $("#dialogBox").dialog();
+        $("#dialogBox p").text("Wrong Anwser");
+    });
+
     // Use event delegation for year group selection
     $(".year-btn").on("click", function () {
         showTopics($(this).data("year"));

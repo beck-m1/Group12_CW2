@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Questions - NumberNinja</title>
     <link rel="stylesheet" href="questions.css">
-    <link rel="icon" type="image/png" href="cw2_logo(1).png">
+    <link rel="icon" type="image/png" href="Images/cw2_logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+    <script src="jqueryui/external/jquery/jquery.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script> 
 </head>
 <body>
 
     <header class="default">
-        <img src="cw2_logo(1).png" alt="Logo">
+        <img src="Images/cw2_logo.png" alt="Logo">
         <h1>NumberNinja</h1>
         <h2>Pratice Questions</h2>
         <nav class="navbar">
@@ -61,17 +65,27 @@
         <!-- Primary 6 -->
         <section id="primary6-addition-subtraction">
             <h2>Addition & Subtraction (Primary 6)</h2>
-            
+            <h1>What is the result of (23+11) + (19-15)</h1>
+            <fieldset>
+                <legend>Select a Location: </legend>
+                <label for="answer1">48</label>
+                <input type="radio" name="answer1" id="answer1">
+                <label for="answer2">44</label>
+                <input type="radio" name="answer1" id="answer2">
+                <label for="answer3">40</label>
+                <input type="radio" name="answer1" id="answer3">
+              </fieldset>
+              <button class="submitBtn" id="addSubBtn">Check Anwser</button>
         </section>
 
         <section id="primary6-basic-fractions">
             <h2>Basic Fractions (Primary 6)</h2>
-            
+            <button class="submitBtn" id="addSubBtn">Check Anwser</button>
         </section>
 
         <section id="primary6-shapes">
             <h2>Shapes (Primary 6)</h2>
-            
+            <button class="submitBtn" id="addSubBtn">Check Anwser</button>
         </section>
 
         <!-- Primary 7 -->
@@ -82,7 +96,7 @@
 
         <section id="primary7-decimals">
             <h2>Decimals (Primary 7)</h2>
-            
+            <p>Learn what decimals are, how to compare them, and how to add or subtract them.</p>
         </section>
 
         <section id="primary7-measurements">
@@ -148,18 +162,13 @@
     </footer>
 
     <script>
-        // Colour blind mode support
-        const colourBlindButton = document.getElementById('colourBlindButton');
-        const restoreButton = document.getElementById('restoreButton');
-        const body = document.body;
-
-        colourBlindButton.addEventListener('click', () => {
-            body.classList.add('colour-blind-monochrome');
-        });
-
-        restoreButton.addEventListener('click', () => {
-            body.classList.remove('colour-blind-monochrome');
-        });
+        
     </script>
+    <script src="questions.js"></script>
 </body>
+
+<div id="dialogBox">
+    <p>Dialogue box</p>
+</div>
+
 </html>

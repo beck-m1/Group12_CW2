@@ -136,9 +136,28 @@ section p {
          scroll-behavior: smooth;
        }
 
+.submitBtn {
+    font-size: 22px;
+    margin: 5px;
+    font-family: 'Trebuchet MS', sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    color: white;
+    padding: 20px;
+    transition: background-color 0.4s ease;
+    width: 30%;
+    margin-bottom: 10px;
+    background-color: #9edd00;
+}
+
+.submitBtn:hover {
+    background-color: #c3fe2d;
+}
+
 /* Footer Styling (Copied from homepage.css) */
 .footer {
-    background-color: #C3F73A;
+    background-color: #beff1a;
     text-align: center;
     padding: 15px;
     margin-top: 20px;
