@@ -46,5 +46,37 @@ $(document).ready(function () {
 
     restoreButton.addEventListener('click', () => {
         body.classList.remove('colour-blind-monochrome');
+
+        let selectedYear = null;
+let selectedTopic = null;
+
+function showOptions(topic) {
+    selectedTopic = topic;
+    $("#selected-topic").text(`Choose an option for ${topic}`);
+    $("#options-container").css("display", "flex");
+}
+
+$(".year-btn").on("click", function () {
+    selectedYear = $(this).data("year");
+    showTopics(selectedYear);
+});
+
+// Handle "Topic Information" and "Practice Questions" button clicks
+$(".option-btn").on("click", function () {
+    const choice = $(this).text();
+
+    if (!selectedYear || !selectedTopic) return;
+
+    // Create a URL-friendly ID (e.g., "Year 9" + "Simple Equations" => "year9-simple-equations")
+    const sectionId = `${selectedYear.toLowerCase().replace(/\s+/g, '')}-${selectedTopic.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+    if (choice === "Topic Information") {
+        window.location.href = `information.html#${sectionId}`;
+    } else if (choice === "Practice Questions") {
+        // Future feature: redirect to questions page
+        window.location.href = `questions.html#${sectionId}`;
+    }
+});
+
     });
 });
