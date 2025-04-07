@@ -4,6 +4,9 @@
     <link rel="stylesheet" type="text/css" href="Login.css">
     <title>NumberNinja - Login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+    <script src="jqueryui/external/jquery/jquery.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script> 
 </head>
 <body>
     <div>
@@ -12,7 +15,7 @@
             <button id="colourBlind">Colour Blind Mode</button>
             <button id="restoreColours">Restore Colours</button>
           </div>
-            <img src="cw2_logo.png" alt="Logo">
+            <img src="Images/cw2_logo.png" alt="Logo">
             <h1>Number Ninja</h1>
         </header>
     </div>
@@ -27,6 +30,16 @@
 
     <form id="loginForm" class="box">
         <header id="headerLogin">Login</header>
+
+        <div class="ui-widget" id="errorMessage">
+            <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
+                <p>
+                    <!--Finish this code-->
+                    <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+                    <strong>Alert:</strong> Sample ui-state-error style.
+                </p>
+            </div>
+        </div>
 
         <div id="usernameControls" class="loginControls">
             <label for="txtUsername">Username:</label>

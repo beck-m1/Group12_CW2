@@ -68,18 +68,18 @@ header.default img {
 }
 
 #usernameControls {
-    top: 70px;
+    top: 10px;
     left: 81px;
 }
 
 #passwordControls {
-    top: 85px;
+    top: 21px;
     left: 88px;
 }
 
 #confirmPasswordControls {
     position: absolute;
-    top: 43%;
+    top: 40%;
     left: 11px;
     display: none;
 }
@@ -101,7 +101,7 @@ header.default img {
 
 #buttonDiv {
     position: relative;
-    top: 110px;
+    top: 50px;
     left: 120px;
     width: 360px;
 }
@@ -143,6 +143,10 @@ header.default img {
 
 #createLogin:hover {
     background-color: #08e800;
+}
+
+#errorMessage {
+    visibility: hidden;
 }
 
 /* Colour Blind Mode Styles */

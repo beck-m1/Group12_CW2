@@ -91,14 +91,19 @@ $(document).ready(function() {
 
         //Check if inputted information is invalid
         if (isCreateAccount) {
-            if (isEmptyOrSpaces(username.val())) usernameCheck = showError(username, "Invalid Username");
-            if (isEmptyOrSpaces(password.val())) passwordCheck = showError(password, "Invalid Password", true);
-            if (isEmptyOrSpaces(confirmPassword.val())) confirmPasswordCheck = showError(confirmPassword, "Passwords do not match", true);
-        } else {
-            if (localStorage.getItem(username.val()) === null) {
-                usernameCheck = showError(username, "Incorrect Username");
+            if (isEmptyOrSpaces(username.val())) {usernameCheck = showError(username, "Invalid Username"); return};
+            if (isEmptyOrSpaces(password.val())) {passwordCheck = showError(password, "Invalid Password", true); return};
+            if (confirmPassword.val() != password.val()) {confirmPasswordCheck = showError(confirmPassword, "Passwords do not match", true); return};
+            if (localStorage.getItem(username.val()) != null) {
+                $("#errorMessage p").html(
+                '<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>' + 
+                '<strong>Alert:</strong> Account Already Exists.'
+                );
+                $("#errorMessage").css("visibility", "visible");
                 return;
             }
+        } else {
+            if (localStorage.getItem(username.val()) === null) {usernameCheck = showError(username, "Incorrect Username"); return;}
             if (password.val() != localStorage.getItem(username.val())) {
                 passwordCheck = showError(password, "Incorrect Password", true);
                 return;
@@ -113,7 +118,7 @@ $(document).ready(function() {
             
         }
         else {
-            //Go to new homepage
+            location.replace("homepage.html")
             document.cookie = `username=${username}`;
         }
     });
