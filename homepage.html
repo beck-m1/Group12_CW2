@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="homepage.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="homepage.js"></script>
+    
+    <link rel="icon" type="image/png" href="Images/cw2_logo.png">
+</head>
+<body>
+   
+    <header class="default">
+        <img src="Images/cw2_logo.png" alt="Logo">
+        <h1>NumberNinja</h1>
+        <h2>Main Menu</h2>
+        
+        <!-- New container for positioning -->
+        <div class="dropdown-wrapper">
+          <div class="dropdown">
+            <button class="dropbtn">Navigation</button>
+            <div class="dropdown-content">
+              <a href="homepage.html">Homepage</a>
+              <a href="login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <div class="container"> 
+        <!-- Flex container for Year Group & Topic buttons -->
+        <div class="button-container">
+            <!-- Year Group Buttons -->
+            <div class="year-group-container">
+                <h2>Select Your Year Group</h2>
+                <button class="year-btn" data-year="Primary 6">Primary 6</button>
+                <button class="year-btn" data-year="Primary 7">Primary 7</button>
+                <button class="year-btn" data-year="Year 8">Year 8</button>
+                <button class="year-btn" data-year="Year 9">Year 9</button>
+                <button class="year-btn" data-year="Year 10">Year 10</button>
+            </div>
+    
+            <!-- Topic Selection Buttons -->
+            <div class="topic-container" id="topic-container" style="display: none;">
+                <h2 id="selected-year"></h2>
+                <div class="topic-buttons">
+                    <button class="topic-btn">Ratio & Proportion</button>
+                    <button class="topic-btn">Simple Equations</button>
+                    <button class="topic-btn">Rounding & Estimation</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Green Buttons (Below Other Buttons) -->
+        <div class="options-container" id="options-container" style="display: none;">
+            <h2 id="selected-topic"></h2>
+            <button class="option-btn">Practice Questions</button>
+            <button class="option-btn">Topic Information</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-buttons">
+            <button id="colourBlindButton" class="footer-btn">Colour Blind Mode</button>
+            <button id="restoreButton" class="footer-btn">Restore Default</button>
+        </div>
+        © 2025 NumberNinja | All Rights Reserved
+    </footer>
+
+</body>
+</html>
