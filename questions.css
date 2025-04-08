@@ -155,6 +155,67 @@ section p {
     background-color: #c3fe2d;
 }
 
+#dialogBox {
+    display: none;
+}
+
+#dialogBox p{
+    text-align: center;
+    font-size: large;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.draggable {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+
+#droppable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em;
+    float: right;
+    margin: 10px;
+}
+
+#Parallelogram {
+    width: 100px;
+	height: 50px;
+	transform: skew(20deg);
+	background: blue;
+}
+
+#Triangle {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid green;
+    background-color: transparent;
+}
+
+#Trapezoid {
+	border-bottom: 50px solid red;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 0;
+	width: 50px;
+    background-color: transparent;
+}
+
+.sortable {
+    list-style-type: none; margin: 0; padding: 0; width: 60%;
+    display: inline-block;
+}
+.sortable li {
+    margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px;
+}
+.sortable li span {
+    position: absolute; margin-left: -1.3em;
+}
+
 /* Footer Styling (Copied from homepage.css) */
 .footer {
     background-color: #beff1a;
