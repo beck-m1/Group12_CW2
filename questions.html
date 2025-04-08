@@ -13,15 +13,15 @@
 <body>
 
     <header class="default">
-        <img src="Images/cw2_logo.png" alt="Logo">
+        <img src="cw2_logo.png"alt="Logo">
         <h1>NumberNinja</h1>
         <h2>Pratice Questions</h2>
         <nav class="navbar">
             <a href="login.html" class="nav-btn">Login</a>
-            <a href="HPage.html" class="nav-btn">Main Menu</a>
+            <a href="homepage.html" class="nav-btn">Main Menu</a>
         </nav>
     </header>
-
+ 
     <main>
 	<nav id="toc" aria-label="Table of contents"> <h2>Table of Contents</h2>
   <ul>
@@ -75,7 +75,7 @@
                 <label for="answer3">40</label>
                 <input type="radio" name="answer1" id="answer3">
               </fieldset>
-              <button class="submitBtn" id="addSubBtn">Check Anwser</button>
+              <button class="submitBtn" data-correct="#answer2">Check Anwser</button>
         </section>
 
         <section id="primary6-basic-fractions">
@@ -107,17 +107,44 @@
         <!-- Year 8 -->
         <section id="year8-percentages">
             <h2>Percentages (Year 8)</h2>
-            
+            <h1>Question: What is 25% of 80 ?</h1>
+            <fieldset>
+              <label for="answer1">20</label>
+              <input type="radio" name="perc" id="percans1">
+              <label for="answer2">25</label>
+              <input type="radio" name="perc" id="percans2"> 
+              <label for="answer3">15</label>
+              <input type="radio" name="perc" id="percans3">
+            </fieldset>
+            <button class="submitBtn" data-correct="#percans1">Check Answer</button>
         </section>
 
         <section id="year8-negative-numbers">
             <h2>Negative Numbers (Year 8)</h2>
-            
+            <h1>Question: -3 + 7 = ?</h1>
+            <fieldset>
+              <label for="answer1">-10</label>
+              <input type="radio" name="answer1" id="addans1">
+              <label for="answer2">4</label>
+              <input type="radio" name="answer1" id="addans2"> 
+              <label for="answer3">-4</label>
+              <input type="radio" name="answer1" id="addans3">
+            </fieldset>
+            <button class="submitBtn" data-correct="#addans2">Check Answer</button>
         </section>
 
         <section id="year8-basic-area-perimeter">
             <h2>Basic Area & Perimeter (Year 8)</h2>
-            
+            <h1>Question: A rectangle is 5cm long and 3cm wide. What is its area?</h1>
+            <fieldset>
+              <label for="answer1">15cm2</label>
+              <input type="radio" name="answer1" id="perans1">
+              <label for="answer2">16cm2</label>
+              <input type="radio" name="answer1" id="perans2"> 
+              <label for="answer3">8cm2</label>
+              <input type="radio" name="answer1" id="perans3">
+            </fieldset>
+            <button class="submitBtn" data-correct="#perans1">Check Answer</button>
         </section>
 
         <!-- Year 9 -->
