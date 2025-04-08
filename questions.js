@@ -40,9 +40,11 @@ $(document).ready(function () {
         $("#dialogBox p").text("Wrong Anwser");
     }
 
-    $("#addSubBtn").on("click", function() {
-        checkAnwser("#answer1");
+    $(".submitBtn").on("click", function () {
+        const correctSelector = $(this).data("correct");
+        checkAnwser(correctSelector);
     });
+    
 
     // Use event delegation for year group selection
     $(".year-btn").on("click", function () {
