@@ -30,21 +30,85 @@ $(document).ready(function () {
         $("#options-container").css("display", "flex");
     }
 
-    function checkAnwser(correctInput) {
+    //Use method for celebration effect
+    function activateConfetti() {
+        confetti({
+            particleCount: 150,
+            spread: 100,
+            origin: { x:0.1, y: 0.9 },
+            });
+
+        confetti({
+            particleCount: 150,
+            spread: 100,
+            origin: { x:0.9, y: 0.9 },
+        });
+    }
+    
+    //Checks if mulitple choice anwser is correct
+    function checkAnwser(correctInput, type) {
         if ($(correctInput).is(":checked")) {
             $("#dialogBox").dialog();
             $("#dialogBox p").text("Correct Anwser");
+            $("#dialogBox").css("background-color", "#b7ff00");
+            activateConfetti();
             return;
         }
         $("#dialogBox").dialog();
         $("#dialogBox p").text("Wrong Anwser");
+        $("#dialogBox").css("background-color", "#ff0000"); 
     }
 
+    function checkSortedList(correctArray, userArray) {
+        const myArray = correctArray.split(",");
+        const sortedList = $("#" + userArray).sortable("toArray");
+        if (JSON.stringify(myArray) === JSON.stringify(sortedList)) {
+            $("#dialogBox").dialog();
+            $("#dialogBox p").text("Correct Anwser");
+            $("#dialogBox").css("background-color", "#b7ff00");
+            activateConfetti();
+            return;
+        }
+        $("#dialogBox").dialog();
+        $("#dialogBox p").text("Wrong Anwser");
+        $("#dialogBox").css("background-color", "#ff0000"); 
+    }
+    
     $(".submitBtn").on("click", function () {
         const correctSelector = $(this).data("correct");
-        checkAnwser(correctSelector);
+        const typeSelector = $(this).data("id");
+        switch ($(this).text()) {
+            case "Check Anwser":
+                checkAnwser(correctSelector);
+                break;
+            case "Check Order":
+                checkSortedList(correctSelector, typeSelector);
+                break;
+        }
+        
     });
-    
+
+    //Checks if drag and drop choice is correct
+    $(function() {
+        $(".draggable").draggable({revert: "valid"});
+        $("#droppable").droppable({
+            drop: function( event, ui ) {
+            if ($(ui.draggable).attr("id") == "Parallelogram") {
+                activateConfetti();
+                $("#droppable").css("background-color", "#9edd00");
+                $("#droppable").text("Correct!");
+            } else {
+                $("#droppable").css("background-color", "red");
+                $("#droppable").text("Wrong!");
+            }
+            }
+        });
+    });
+      
+    //Allows drag and drop
+    $(function() {
+        $(".sortable").sortable();
+    });
 
     // Use event delegation for year group selection
     $(".year-btn").on("click", function () {
