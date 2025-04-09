@@ -110,6 +110,10 @@ $(document).ready(function () {
         $(".sortable").sortable();
     });
 
+    $(".dropdown-wrapper").hover(function(){
+        $(".dropdown-content").slideToggle("fast");
+    });
+    
     // Use event delegation for year group selection
     $(".year-btn").on("click", function () {
         showTopics($(this).data("year"));
