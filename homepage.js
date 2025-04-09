@@ -57,6 +57,10 @@ function showOptions(topic) {
     $("#options-container").css("display", "flex");
 }
 
+$(".dropdown-wrapper").hover(function(){
+        $(".dropdown-content").slideToggle("fast");
+    });
+
 $(".year-btn").on("click", function () {
     selectedYear = $(this).data("year");
     showTopics(selectedYear);
