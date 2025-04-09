@@ -100,6 +100,8 @@ $(document).ready(function() {
                 '<strong>Alert:</strong> Account Already Exists.'
                 );
                 $("#errorMessage").css("visibility", "visible");
+                $("#errorMessage div").removeClass("ui-icon ui-icon-info");
+                $("#errorMessage div").addClass("ui-state-highlight ui-corner-all");
                 return;
             }
         } else {
@@ -115,7 +117,13 @@ $(document).ready(function() {
             for (var i = 0; i < localStorage.length; i++){
                 console.log(localStorage.key(i));
             }
-            
+            $("#errorMessage p").html(
+                '<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>' + 
+                '<strong>Alert:</strong> New Account Added.'
+            );
+            $("#errorMessage").css("visibility", "visible");
+            $("#errorMessage div").removeClass("ui-state-error ui-corner-all");
+            $("#errorMessage div").addClass("ui-state-highlight ui-corner-all");
         }
         else {
             location.replace("homepage.html")
@@ -124,11 +132,11 @@ $(document).ready(function() {
     });
 
     // Colour Blind Mode Functionality
-    $("#colourBlind").click(function() {
+    $("#colourBlindButton").click(function() {
         $("body").addClass("colour-blind");
     });
 
-    $("#restoreColours").click(function() {
+    $("#restoreButton").click(function() {
         $("body").removeClass("colour-blind");
     });
 });
