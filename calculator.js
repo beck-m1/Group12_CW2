@@ -1,6 +1,9 @@
 const display = document.getElementById("display");
 
 function appendToDisplay(input){
+    if (/[a-z]/i.test(display.value)) {
+        clearDisplay();
+    }
     display.value += input;
 }
 
