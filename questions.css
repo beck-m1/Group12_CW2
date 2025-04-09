@@ -28,6 +28,8 @@ header.default img {
 }
 
 header.default h1 {
+    position: absolute;
+    left: 110px;
     font-size: 25px;
     margin: 0;
     font-weight: bold;
@@ -35,11 +37,12 @@ header.default h1 {
 }
 
 header.default h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 40px;
-    margin: 5px 0 0;
     font-weight: bold;
-    flex-grow: 1;
-    text-align: center;
+    margin: 0;
 }
 
 .dropdown-wrapper {
@@ -136,54 +139,54 @@ section p {
 }
 
 #toc {
-        width: 80%;         
-        max-width: 600px;
-        margin: 20px auto 30px auto;
-        border: 1px solid #ccc; 
-        padding: 15px 25px;
-        background-color: #f9f9f9;
-        border-radius: 5px;
-      }
-      #toc h2 {
-        margin-top: 0; 
-        text-align: center;
-        margin-bottom: 15px;
-      }
-	  
-      #toc ul {
-        list-style: none; 
-        padding-left: 0; 
-        margin-bottom: 10px;
-      }
-      #toc ul ul {
-         list-style: disc;
-         padding-left: 20px;
-         margin-top: 5px;
-         margin-bottom: 15px; 
-      }
-      #toc li {
-        margin-bottom: 8px;
-      }
-      #toc li li { 
-          margin-bottom: 5px;
-      }
-      #toc > ul > li { 
-          font-weight: bold; 
-          margin-top: 10px;
-      }
-       #toc > ul > li:first-child { 
-          margin-top: 0;
-      }
-      #toc a {
-        text-decoration: none;
-        color: #0056b3; 
-      }
-      #toc a:hover {
-        text-decoration: underline;
-      }
-      html {
-         scroll-behavior: smooth;
-       }
+    width: 80%;         
+    max-width: 600px;
+    margin: 20px auto 30px auto;
+    border: 1px solid #ccc; 
+    padding: 15px 25px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+#toc h2 {
+    margin-top: 0; 
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#toc ul {
+    list-style: none; 
+    padding-left: 0; 
+    margin-bottom: 10px;
+}
+#toc ul ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px; 
+}
+#toc li {
+    margin-bottom: 8px;
+}
+#toc li li { 
+    margin-bottom: 5px;
+}
+#toc > ul > li { 
+    font-weight: bold; 
+    margin-top: 10px;
+}
+#toc > ul > li:first-child { 
+    margin-top: 0;
+}
+#toc a {
+    text-decoration: none;
+    color: #0056b3; 
+}
+#toc a:hover {
+    text-decoration: underline;
+}
+html {
+    scroll-behavior: smooth;
+}
 
 .submitBtn {
     font-size: 22px;
@@ -255,14 +258,37 @@ section p {
 }
 
 .sortable {
-    list-style-type: none; margin: 0; padding: 0; width: 60%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60%;
     display: inline-block;
 }
 .sortable li {
-    margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px;
+    margin: 0 3px 3px 3px;
+    padding: 0.4em;
+    padding-left: 1.5em;
+    font-size: 1.4em;
+    height: 18px;
 }
+
 .sortable li span {
-    position: absolute; margin-left: -1.3em;
+    position: absolute;
+    margin-left: -1.3em;
+}
+
+/* Calculator Styling */
+#calculatorFrame {
+    width: 500px;
+    height: 722px;
+    border: none;
+}
+
+#calculatorContainer {
+    position: sticky;
+    right: 1%;
+    top: 2%;
+    float: right;
 }
 
 /* Footer Styling (Copied from homepage.css) */
