@@ -1,4 +1,4 @@
-document).ready(function () {
+$(document).ready(function () {
     const topics = {
         "Primary 6": ["Addition & Subtraction", "Basic Fractions", "Shapes"],
         "Primary 7": ["Multiplication & Division", "Decimals", "Measurements"],
