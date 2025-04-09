@@ -1,12 +1,15 @@
 body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header.default {
     background-color: #C3F73A;
     padding: 10px;
     text-align: center;
-    font-size: 35px;
+    font-size: 19px;
     color: black;
     font-family: 'Trebuchet MS', sans-serif;
     display: flex;
@@ -108,7 +111,6 @@ header.default img {
 
 .buttons {
     font-size: 22px;
-    width: 180px;
     margin: 5px;
     font-family: 'Trebuchet MS', sans-serif;
     border: none;
@@ -165,4 +167,38 @@ header.default img {
   padding: 8px 16px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+/* Footer Styling (Copied from homepage.css) */
+.footer {
+    background-color: #beff1a;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-btn {
+    background-color: #31081F;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-btn:hover {
+    background-color: #A49E8D;
 }
