@@ -46,7 +46,7 @@ $(document).ready(function () {
     }
     
     //Checks if mulitple choice answer is correct
-    function checkanswer(correctInput, type) {
+    function checkAnswer(correctInput, type) {
         if ($(correctInput).is(":checked")) {
             $("#dialogBox").dialog();
             $("#dialogBox p").text("Correct answer");
@@ -98,28 +98,10 @@ $(document).ready(function () {
 
     //Checks if drag and drop choice is correct
     $(function() {
-        $(".draggable").draggable({revert: "valid"});
-        $("#droppable").droppable({
-            drop: function( event, ui ) {
-            if ($(ui.draggable).attr("id") == "Parallelogram") {
-                activateConfetti();
-                $("#droppable").css("background-color", "#9edd00");
-                $("#droppable").text("Correct!");
-            } else {
-                $("#droppable").css("background-color", "red");
-                $("#droppable").text("Wrong!");
-            }
-            }
-        });
-    });
-      
-    $(function() {
-        $(".draggable").draggable({ revert: "invalid" });
-      
+        $(".draggable").draggable({ revert: "valid" });
         $(".drop-target").droppable({
           drop: function(event, ui) {
             var isCorrect = $(ui.draggable).data("correct") === true;
-      
             if (isCorrect) {
               if (typeof activateConfetti === "function") activateConfetti();
               $(this).css("background-color", "#9edd00").text("Correct!");
@@ -156,7 +138,7 @@ function checkStandardForm() {
             button.css("background-color", "#ff0000").text("Wrong!");
         }
     } 
-    }
+    
     // Use event delegation for year group selection
     $(".year-btn").on("click", function () {
         showTopics($(this).data("year"));
