@@ -135,9 +135,9 @@ function checkStandardForm() {
             document.getElementById("standardFormInput").disabled = true;
         } else {
             $("#dialogBox").dialog();
-        $("#dialogBox p").text("Wrong answer");
-        $("#dialogBox").css("background-color", "#ff0000");
-          }
+            $("#dialogBox p").text("Wrong answer");
+            $("#dialogBox").css("background-color", "#ff0000");
+        }
     } 
     
     // Use event delegation for year group selection
