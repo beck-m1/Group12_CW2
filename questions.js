@@ -121,7 +121,7 @@ $(document).ready(function () {
         $(".dropdown-content").slideToggle("fast");
     });
     
-    // Standard Form
+   // Standard Form
 function checkStandardForm() {
         const userInput = document.getElementById("standardFormInput").value
             .trim()
@@ -132,11 +132,12 @@ function checkStandardForm() {
         const button = $("#year10-standard-form .submitBtn");
         if (validAnswers.includes(userInput)) {
             activateConfetti();
-            button.css("background-color", "#9edd00").text("Correct!");
             document.getElementById("standardFormInput").disabled = true;
         } else {
-            button.css("background-color", "#ff0000").text("Wrong!");
-        }
+            $("#dialogBox").dialog();
+        $("#dialogBox p").text("Wrong answer");
+        $("#dialogBox").css("background-color", "#ff0000");
+          }
     } 
     
     // Use event delegation for year group selection
