@@ -75,19 +75,35 @@ $(document).ready(function () {
     }
     
     $(".submitBtn").on("click", function () {
-        const correct = $(this).data("correct");
-        const listId = $(this).data("id"); // only exists for sorting questions
-    
-        if (listId) {
-            // Sorting question
-            checkSortedList(correct, listId);
-        } else {
-            // Multiple choice or radio question
-            checkAnwser(correct);
-        }
-    });
-    
+    const correctSelector = $(this).data("correct");
+    const typeSelector = $(this).data("id");
+    const buttonText = $(this).text().trim();
 
+    console.log("Button clicked with text:", buttonText);
+    console.log("Type Selector:", typeSelector);
+
+    switch (buttonText) {
+        case "Check Anwser":
+            console.log("Checking answer...");
+            checkAnwser(correctSelector, typeSelector);
+            break;
+        case "Check Order":
+            console.log("Checking order..."); 
+            checkSortedList(correctSelector, typeSelector);
+            break;
+        case "Check Answer":
+            console.log("Checking standard form answer...");
+            if (typeSelector === "standard-form") {
+                checkStandardForm(); 
+            } else {
+                console.warn("Unknown typeSelector:", typeSelector); 
+            }
+            break;
+        default:
+            console.warn("Unhandled button text:", buttonText);  
+    }
+});
+    
     //Checks if drag and drop choice is correct
     $(function() {
         $(".draggable").draggable({revert: "valid"});
@@ -105,6 +121,23 @@ $(document).ready(function () {
         });
     });
       
+    $(function() {
+        $(".draggable").draggable({ revert: "invalid" });
+      
+        $(".drop-target").droppable({
+          drop: function(event, ui) {
+            var isCorrect = $(ui.draggable).data("correct") === true;
+      
+            if (isCorrect) {
+              if (typeof activateConfetti === "function") activateConfetti();
+              $(this).css("background-color", "#9edd00").text("Correct!");
+            } else {
+              $(this).css("background-color", "#ff0000").text("Wrong!");
+            }
+          }
+        });
+      });
+    
     //Allows drag and drop
     $(function() {
         $(".sortable").sortable();
@@ -113,7 +146,39 @@ $(document).ready(function () {
     $(".dropdown-wrapper").hover(function(){
         $(".dropdown-content").slideToggle("fast");
     });
-    
+    // Standard Form
+function checkStandardForm() {
+    const userInput = document.getElementById("standardFormInput").value
+        .trim()
+        .replace(/\s+/g, '') 
+        .toLowerCase();     
+
+    console.log("Captured Input: ", userInput); 
+
+    const validAnswers = ["5.6×10^-4", "5.6x10^-4", "5.6*10^-4"];
+    const feedback = document.getElementById("standardFormFeedback");
+
+    const button = $(".submitBtn");
+
+    console.log("Valid Answers: ", validAnswers);
+    console.log("Is input valid? ", validAnswers.includes(userInput)); // 
+
+    if (validAnswers.includes(userInput)) {
+        if (typeof activateConfetti === "function") activateConfetti();
+        
+        feedback.textContent = "✅ Correct! That's the proper standard form."; 
+        feedback.style.color = "green";
+
+        button.css("background-color", "#9edd00")
+              .text("Correct!"); 
+        document.getElementById("standardFormInput").disabled = true; 
+    } else {
+        feedback.textContent = "❌ Try again. Move the decimal and write it as a × 10^n.";
+        feedback.style.color = "red";
+
+        button.css("background-color", "#ff0000") 
+              .text("Wrong!"); 
+    }
     // Use event delegation for year group selection
     $(".year-btn").on("click", function () {
         showTopics($(this).data("year"));
