@@ -291,6 +291,35 @@ html {
     float: right;
 }
 
+.drag-item {
+    padding: 10px;
+    margin: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: grab;
+    border-radius: 8px;
+  }
+  
+  .drop-box {
+    border: 2px dashed #888;
+    padding: 20px;
+    text-align: center;
+    min-height: 50px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .question-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    max-width: 400px;
+    background-color: #fdfdfd;
+}
+
 /* Footer Styling (Copied from homepage.css) */
 .footer {
     background-color: #beff1a;
