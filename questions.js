@@ -59,6 +59,7 @@ $(document).ready(function () {
         $("#dialogBox").css("background-color", "#ff0000"); 
     }
 
+    //Checks if the sorted list is correct
     function checkSortedList(correctArray, userArray) {
         const myArray = correctArray.split(",");
         const sortedList = $("#" + userArray).sortable("toArray");
@@ -74,6 +75,7 @@ $(document).ready(function () {
         $("#dialogBox").css("background-color", "#ff0000"); 
     }
     
+    //Checks the user's anwser
     $(".submitBtn").on("click", function () {
         const correctSelector = $(this).data("correct");
         const typeSelector = $(this).data("id");
@@ -87,7 +89,7 @@ $(document).ready(function () {
         }
         if (buttonText === "check answer") {
             console.log("Checking answer...");
-            checkAnswer(correctSelector, typeSelector);
+            checkAnswer(correctSelector);
         } else if (buttonText === "check order") {
             console.log("Checking order...");
             checkSortedList(correctSelector, typeSelector);
@@ -112,7 +114,7 @@ $(document).ready(function () {
         });
       });
     
-    //Allows drag and drop
+    //Allows sorting
     $(function() {
         $(".sortable").sortable();
     });
@@ -121,8 +123,8 @@ $(document).ready(function () {
         $(".dropdown-content").slideToggle("fast");
     });
     
-   // Standard Form
-function checkStandardForm() {
+    // Standard Form
+    function checkStandardForm() {
         const userInput = document.getElementById("standardFormInput").value
             .trim()
             .replace(/\s+/g, '')
@@ -132,6 +134,9 @@ function checkStandardForm() {
         const button = $("#year10-standard-form .submitBtn");
         if (validAnswers.includes(userInput)) {
             activateConfetti();
+            $("#dialogBox").dialog();
+            $("#dialogBox p").text("Correct answer");
+            $("#dialogBox").css("background-color", "#b7ff00");
             document.getElementById("standardFormInput").disabled = true;
         } else {
             $("#dialogBox").dialog();

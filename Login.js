@@ -16,6 +16,7 @@ $(document).ready(function() {
         passwordCheck = 0;
         confirmPasswordCheck = 0;
         
+        //Toggles between login and create account
         if ($("#confirmPasswordControls").is(":hidden")) {
             $("#headerLogin").text("Create New Account");
             $("#createLogin").text("Sign In");
@@ -68,6 +69,7 @@ $(document).ready(function() {
         }
     });
 
+    //Processes the inputted information
     $("#login").click(function() {
         const isCreateAccount = $(this).text() == "Create Account";
         const username = $("#txtUsername");
@@ -112,6 +114,7 @@ $(document).ready(function() {
             }
         }
 
+        //Handles the valid information
         if (isCreateAccount) {
             localStorage.setItem(username.val(), password.val());
             for (var i = 0; i < localStorage.length; i++){

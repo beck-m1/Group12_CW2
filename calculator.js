@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
 
+//Appends the display with the input
 function appendToDisplay(input){
     if (/[a-z]/i.test(display.value)) {
         clearDisplay();
@@ -7,6 +8,7 @@ function appendToDisplay(input){
     display.value += input;
 }
 
+//Calculates the displayed equation
 function calculate(){
     try {
         display.value = eval(display.value);

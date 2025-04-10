@@ -35,6 +35,10 @@ $(document).ready(function () {
         showTopics($(this).data("year"));
     });
 
+    $(".dropdown-wrapper").hover(function(){
+        $(".dropdown-content").slideToggle("fast");
+    });
+
     // Colour blind mode functionality
     const colourBlindButton = document.getElementById('colourBlindButton');
     const restoreButton = document.getElementById('restoreButton');

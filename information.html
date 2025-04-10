@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Topic Information - NumberNinja</title>
+    <title>NumberNinja - Topic Information</title>
     <link rel="stylesheet" href="information.css">
-    <link rel="icon" type="image/png" href="cw2_logo(1).png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="Images/cw2_logo.png">
 </head>
 <body>
 
     <header class="default">
-        <img src="cw2_logo(1).png" alt="Logo">
+        <img src="Images/cw2_logo.png" alt="Logo">
         <h1>NumberNinja</h1>
         <h2>Topic Information</h2>
-        <nav class="navbar">
-            <a href="login.html" class="nav-btn">Login</a>
-            <a href="HPage.html" class="nav-btn">Main Menu</a>
-        </nav>
+
+        <div class="dropdown-wrapper">
+            <div class="dropdown">
+              <button class="dropbtn">Navigation</button>
+              <div class="dropdown-content">
+                <a href="homepage.html">Homepage</a>
+                <a href="login.html">Login</a>
+              </div>
+          </div>
+        </div>
     </header>
 
     <main>
@@ -147,19 +154,6 @@
         © 2025 NumberNinja | All Rights Reserved
     </footer>
 
-    <script>
-        // Colour blind mode support
-        const colourBlindButton = document.getElementById('colourBlindButton');
-        const restoreButton = document.getElementById('restoreButton');
-        const body = document.body;
-
-        colourBlindButton.addEventListener('click', () => {
-            body.classList.add('colour-blind-monochrome');
-        });
-
-        restoreButton.addEventListener('click', () => {
-            body.classList.remove('colour-blind-monochrome');
-        });
-    </script>
+    <script src="information.js"></script>
 </body>
 </html>

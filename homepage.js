@@ -25,6 +25,10 @@ $(document).ready(function () {
         $("#options-container").hide();
     }
 
+    $(".dropdown-wrapper").hover(function(){
+        $(".dropdown-content").slideToggle("fast");
+    });
+
     function showOptions(topic) {
         $("#selected-topic").text(`Choose an option for ${topic}`);
         $("#options-container").css("display", "flex");
@@ -56,10 +60,6 @@ function showOptions(topic) {
     $("#selected-topic").text(`Choose an option for ${topic}`);
     $("#options-container").css("display", "flex");
 }
-
-$(".dropdown-wrapper").hover(function(){
-        $(".dropdown-content").slideToggle("fast");
-    });
 
 $(".year-btn").on("click", function () {
     selectedYear = $(this).data("year");
