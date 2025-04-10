@@ -45,17 +45,17 @@ $(document).ready(function () {
         });
     }
     
-    //Checks if mulitple choice anwser is correct
-    function checkAnwser(correctInput, type) {
+    //Checks if mulitple choice answer is correct
+    function checkanswer(correctInput, type) {
         if ($(correctInput).is(":checked")) {
             $("#dialogBox").dialog();
-            $("#dialogBox p").text("Correct Anwser");
+            $("#dialogBox p").text("Correct answer");
             $("#dialogBox").css("background-color", "#b7ff00");
             activateConfetti();
             return;
         }
         $("#dialogBox").dialog();
-        $("#dialogBox p").text("Wrong Anwser");
+        $("#dialogBox p").text("Wrong answer");
         $("#dialogBox").css("background-color", "#ff0000"); 
     }
 
@@ -64,46 +64,38 @@ $(document).ready(function () {
         const sortedList = $("#" + userArray).sortable("toArray");
         if (JSON.stringify(myArray) === JSON.stringify(sortedList)) {
             $("#dialogBox").dialog();
-            $("#dialogBox p").text("Correct Anwser");
+            $("#dialogBox p").text("Correct answer");
             $("#dialogBox").css("background-color", "#b7ff00");
             activateConfetti();
             return;
         }
         $("#dialogBox").dialog();
-        $("#dialogBox p").text("Wrong Anwser");
+        $("#dialogBox p").text("Wrong answer");
         $("#dialogBox").css("background-color", "#ff0000"); 
     }
     
     $(".submitBtn").on("click", function () {
-    const correctSelector = $(this).data("correct");
-    const typeSelector = $(this).data("id");
-    const buttonText = $(this).text().trim();
-
-    console.log("Button clicked with text:", buttonText);
-    console.log("Type Selector:", typeSelector);
-
-    switch (buttonText) {
-        case "Check Anwser":
-            console.log("Checking answer...");
-            checkAnwser(correctSelector, typeSelector);
-            break;
-        case "Check Order":
-            console.log("Checking order..."); 
-            checkSortedList(correctSelector, typeSelector);
-            break;
-        case "Check Answer":
+        const correctSelector = $(this).data("correct");
+        const typeSelector = $(this).data("id");
+        const buttonText = $(this).text().trim().toLowerCase(); 
+        console.log("Button clicked with text:", buttonText);
+        console.log("Type Selector:", typeSelector);
+        if (typeSelector === "standard-form") {
             console.log("Checking standard form answer...");
-            if (typeSelector === "standard-form") {
-                checkStandardForm(); 
-            } else {
-                console.warn("Unknown typeSelector:", typeSelector); 
-            }
-            break;
-        default:
-            console.warn("Unhandled button text:", buttonText);  
-    }
-});
-    
+            checkStandardForm();
+            return;
+        }
+        if (buttonText === "check answer") {
+            console.log("Checking answer...");
+            checkAnswer(correctSelector, typeSelector);
+        } else if (buttonText === "check order") {
+            console.log("Checking order...");
+            checkSortedList(correctSelector, typeSelector);
+        } else {
+            console.warn("Unhandled button text:", buttonText);
+        }
+    });
+
     //Checks if drag and drop choice is correct
     $(function() {
         $(".draggable").draggable({revert: "valid"});
@@ -146,38 +138,24 @@ $(document).ready(function () {
     $(".dropdown-wrapper").hover(function(){
         $(".dropdown-content").slideToggle("fast");
     });
+    
     // Standard Form
 function checkStandardForm() {
-    const userInput = document.getElementById("standardFormInput").value
-        .trim()
-        .replace(/\s+/g, '') 
-        .toLowerCase();     
-
-    console.log("Captured Input: ", userInput); 
-
-    const validAnswers = ["5.6×10^-4", "5.6x10^-4", "5.6*10^-4"];
-    const feedback = document.getElementById("standardFormFeedback");
-
-    const button = $(".submitBtn");
-
-    console.log("Valid Answers: ", validAnswers);
-    console.log("Is input valid? ", validAnswers.includes(userInput)); // 
-
-    if (validAnswers.includes(userInput)) {
-        if (typeof activateConfetti === "function") activateConfetti();
-        
-        feedback.textContent = "✅ Correct! That's the proper standard form."; 
-        feedback.style.color = "green";
-
-        button.css("background-color", "#9edd00")
-              .text("Correct!"); 
-        document.getElementById("standardFormInput").disabled = true; 
-    } else {
-        feedback.textContent = "❌ Try again. Move the decimal and write it as a × 10^n.";
-        feedback.style.color = "red";
-
-        button.css("background-color", "#ff0000") 
-              .text("Wrong!"); 
+        const userInput = document.getElementById("standardFormInput").value
+            .trim()
+            .replace(/\s+/g, '')
+            .toLowerCase();
+        const validAnswers = ["5.6×10^-4", "5.6x10^-4", "5.6*10^-4"];
+        // Only affect the button in this section
+        const button = $("#year10-standard-form .submitBtn");
+        if (validAnswers.includes(userInput)) {
+            activateConfetti();
+            button.css("background-color", "#9edd00").text("Correct!");
+            document.getElementById("standardFormInput").disabled = true;
+        } else {
+            button.css("background-color", "#ff0000").text("Wrong!");
+        }
+    } 
     }
     // Use event delegation for year group selection
     $(".year-btn").on("click", function () {
