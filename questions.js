@@ -75,18 +75,18 @@ $(document).ready(function () {
     }
     
     $(".submitBtn").on("click", function () {
-        const correctSelector = $(this).data("correct");
-        const typeSelector = $(this).data("id");
-        switch ($(this).text()) {
-            case "Check Anwser":
-                checkAnwser(correctSelector);
-                break;
-            case "Check Order":
-                checkSortedList(correctSelector, typeSelector);
-                break;
+        const correct = $(this).data("correct");
+        const listId = $(this).data("id"); // only exists for sorting questions
+    
+        if (listId) {
+            // Sorting question
+            checkSortedList(correct, listId);
+        } else {
+            // Multiple choice or radio question
+            checkAnwser(correct);
         }
-        
     });
+    
 
     //Checks if drag and drop choice is correct
     $(function() {
